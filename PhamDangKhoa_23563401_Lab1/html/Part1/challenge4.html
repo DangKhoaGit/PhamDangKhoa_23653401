@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Challenge 4: Tip Calculator</h1>
+        <p>Bấm f12 để xem kết quả.</p>
+    </div>
+    <script>
+        function calcTip(money){
+            if (money < 50 ) return 0;
+            else if(money < 300) return money * 0.15;
+            else return money * 0.2;
+        }
+
+        var tip1 = 275;
+        var tip2 = 40;
+        var tip3 = 430;
+
+        console.log('The bill was ', tip1, ", the tip was ",calcTip(tip1),' and the total was ', tip1 + calcTip(tip1))
+        console.log('The bill was ', tip2, ", the tip was ",calcTip(tip2),' and the total was ', tip2 + calcTip(tip2))
+        console.log('The bill was ', tip3, ", the tip was ",calcTip(tip3),' and the total was ', tip3 + calcTip(tip3))
+    </script>
+</body>
+</html>

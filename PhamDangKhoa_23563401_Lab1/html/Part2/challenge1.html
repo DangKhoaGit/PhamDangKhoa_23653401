@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Bấm f12 để xem kết quả.</p>
+    </div>
+
+    <script>
+        var arrKo1 = [44,23,71];
+        var arrKo2 = [85,54,41];
+        var arrDol1 = [56,54,49];
+        var arrDol2 = [23,34,27];
+        function calcAverage(arr){
+            sum = 0;
+            arr.forEach(element => {
+                sum += element;
+            });
+            return sum / arr.length;
+        }
+
+        var avgDol1 = calcAverage(arrDol1);
+        var avgDol2 = calcAverage(arrDol2);
+
+        var avgKo1 = calcAverage(arrKo1);
+        var avgKo2 = calcAverage(arrKo2);
+
+        function checkWinner(diem1, diem2){
+            if(diem1 > 2 * diem2) return 1
+            else if(diem2 > 2*diem1) return 2;
+            else return 0;
+        }
+
+
+        console.log('Trận đấu thứ nhất. Đội Dolphin có điểm trung bình là ',avgDol1,' và đội Koala có điểm trung bình là ',avgKo1)
+        if(checkWinner(avgDol1,avgKo1)=== 1){
+            console.log('The winner is Dolphin.');
+        }else if(checkWinner(avgDol1,avgKo1)=== 2){
+            console.log('The winner is Koala.');
+        }else{
+            console.log('There is on the winner');
+        }
+
+        console.log('Trận đấu thứ hai. Đội Dolphin có điểm trung bình là ',avgDol2,' và đội Koala có điểm trung bình là ',avgDol2)
+        if(checkWinner(avgDol2)=== 1){
+            console.log('The winner is Dolphin.');
+        }else if(checkWinner(avgDol2)=== 2){
+            console.log('The winner is Koala.');
+        }else{
+            console.log('There is on the winner');
+        }
+</script>
+</body>
+</html>

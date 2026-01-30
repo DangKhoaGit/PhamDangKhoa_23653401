@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Bấm f12 để xem kết quả</p>
+    </div>
+    <script>
+        calcTips = (billAmount) => {
+            let tip;
+            if (billAmount < 50) {
+                tip = billAmount * 0.2;
+            } else if (billAmount >= 50 && billAmount <= 200) {
+                tip = billAmount * 0.15;
+            } else {
+                tip = billAmount * 0.1;
+            }
+            return tip;
+        };
+        calcTotal = (billAmount) => {
+            let tip = calcTips(billAmount);
+            return billAmount + tip;
+        };
+
+        let bills = [ 22, 295, 176, 440, 37, 105, 10, 1100, 86 , 52];
+        let tips = [];
+        let totals = [];
+
+        for (let i = 0; i < bills.length; i++) {
+            tips.push(calcTips(bills[i]));
+            totals.push(calcTotal(bills[i]));
+        }
+
+        console.log('Bills:', bills);
+        console.log('Tips:', tips);
+        console.log('Totals:', totals);
+        
+        calcAverage = (arr) => {
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+            return sum / arr.length;
+        };
+        console.log('Average Total:', calcAverage(totals));
+    </script>
+</body>
+</html>

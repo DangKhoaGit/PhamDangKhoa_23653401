@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Bấm f12 để xem kết quả</p>
+    </div>
+    <script>
+        var Mark = {
+            name : 'Mark Miller',
+            weight : 78,
+            height: 1.69
+        }
+        var John = {
+            name : 'John Smith',
+            weight : 92,
+            height: 1.95
+        }
+
+        function calcBMI(obj){
+            return obj.weight / (obj.height ** 2);
+        }
+
+        var MarkBMI = calcBMI(Mark);
+        var JohnBMI = calcBMI(John);
+        console.log(Mark.name,'with BMI: ' + MarkBMI);
+        console.log(John.name,'with BMI: ' + JohnBMI);
+    </script>
+</body>
+</html>

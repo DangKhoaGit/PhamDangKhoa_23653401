@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" name="" id="score" placeholder="Enter your score">
+        <input type="text" id="result" placeholder="secretNumber">
+        <button id="btnScore">Again</button>
+    </div>
+    <script>
+        document.getElementById('btnScore').addEventListener('click',function(){
+            document.getElementById('score').value = '';
+            document.getElementById('result').value = 0;
+            document.body.style.backgroundColor = '#222';
+            document.getElementById('result').style.width = '15rem';
+        });
+    </script>
+</body>
+</html>

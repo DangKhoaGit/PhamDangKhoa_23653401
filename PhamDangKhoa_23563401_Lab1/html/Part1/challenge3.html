@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function avgScore(arr){
+            var sum = 0;
+            for(var i = 0; i < arr.length; i++){
+                sum += arr[i];
+            }
+            return sum / arr.length;
+        }
+        function checkWinner(avgDolphins, avgKoalas){
+            if(avgDolphins >= avgKoalas){
+                console.log("Dolphins win (" + avgDolphins + " vs " + avgKoalas + ")");
+            } else if(avgKoalas >=  avgDolphins){
+                console.log("Koalas win (" + avgKoalas + " vs " + avgDolphins + ")");
+            } else {
+                console.log("No team wins...");
+            }
+        }
+        var dolphinsScores = [96, 108, 89];
+        var koalasScores = [88, 91, 110];
+        var avgDolphins = avgScore(dolphinsScores);
+        var avgKoalas = avgScore(koalasScores);
+        checkWinner(avgDolphins, avgKoalas);
+        console.log("Bonus 1:");
+        function checkWinnerAtLeast100(arrDolphins, arrKoalas){
+            var avgDolphins = avgScore(arrDolphins);
+            var avgKoalas = avgScore(arrKoalas);
+            if(avgDolphins >= avgKoalas){
+                arrDolphins.forEach(element => {
+                    if(element < 100){
+                        console.log("No team wins...");
+                        return;
+                    }
+                });
+                console.log("Dolphins win (" + avgDolphins + " vs " + avgKoalas + ")");
+            } else if(avgKoalas >= avgDolphins){
+                arrKoalas.forEach(element => {
+                    if(element < 100){
+                        console.log("No team wins...");
+                        return;
+                    }
+                });
+                console.log("Koalas win (" + avgKoalas + " vs " + avgDolphins + ")");
+            } else {
+                console.log("No team wins...");
+            }
+        }
+
+        var dolphinsScores2 = [97, 112, 101];
+        var koalasScores2 = [109, 95, 123];
+        checkWinnerAtLeast100(dolphinsScores2, koalasScores2);
+
+        console.log("Bonus 2:");
+        function isElementGreaterThan100(arr){
+            for(var i = 0; i < arr.length; i++){
+                if(arr[i] < 100){
+                    return false;
+                }
+            }
+            return true;
+        }
+        function checkBonus2(arrDolphins, arrKoalas){
+            var avgDolphins = avgScore(arrDolphins);
+            var avgKoalas = avgScore(arrKoalas);
+            if(avgDolphins >= avgKoalas){
+                console.log("Dolphins win (" + avgDolphins + " vs " + avgKoalas + ")");
+            } else if(avgKoalas >=  avgDolphins){
+                console.log("Koalas win (" + avgKoalas + " vs " + avgDolphins + ")");
+            } else {
+                if(isElementGreaterThan100(arrDolphins) && isElementGreaterThan100(arrKoalas)){
+                    console.log("Draw");
+                } else {
+                console.log("No team wins...");
+                }
+            }
+        }
+        var dolphinsScores3 = [97, 112, 101];
+        var koalasScores3 = [109, 95, 106];
+        checkBonus2(dolphinsScores3, koalasScores3);
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Challenge 3: BMI Calculator 3</h1>
+        <p>Bấm f12 để xem kết quả.</p>
+    </div>
+</body>
+</html>

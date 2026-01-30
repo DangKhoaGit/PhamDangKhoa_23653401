@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function calcBMI(height,weight){
+            return weight / (height * height);
+        }
+
+        function isMarkHigherBMI(MarkH, MarkW, JohnH, JohnW){
+            var MarkBMI = calcBMI(MarkH, MarkW);
+            var JohnBMI = calcBMI(JohnH, JohnW);
+            return MarkBMI > JohnBMI;
+        }
+        
+        console.log("Task 1:");
+        if(isMarkHigherBMI(1.69, 78, 1.95, 92)){
+            console.log("Mark's BMI is higher than John's!");
+        } else {
+            console.log("John's BMI is higher than Mark's!");
+        }
+        console.log("Task 2:");
+        if(isMarkHigherBMI(1.88, 95, 1.76, 85)){
+            console.log("Mark's BMI " + calcBMI(1.88, 95) + " is higher than John's(" + calcBMI(1.76, 85) + ")");
+        } else {
+            console.log("John's BMI " + calcBMI(1.88, 95) + " is higher than Mark's(" + calcBMI(1.76, 85) + ")");
+        }
+        
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Challenge 2: BMI Calculator 2</h1>
+        <p>Bấm f12 để xem kết quả.</p>
+    </div>
+</body>
+</html>

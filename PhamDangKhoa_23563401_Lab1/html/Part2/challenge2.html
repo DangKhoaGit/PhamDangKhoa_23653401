@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Bấm f12 để xem kết quả</p>
+    </div>
+    <script>
+        function calcTip(money){
+            if (money < 50 ) return 0;
+            else if(money < 300) return money * 0.15;
+            else return money * 0.2;
+        }
+
+        function calcTips(arr){
+            sum = 0;
+            arr.forEach(element => {
+                sum += calcTip(element);
+            });
+            return sum;
+        }
+
+        var tips = [125,555,44];
+        function calcSum(arr){
+            sum = 0;
+            arr.forEach(element => {
+                sum += element;
+            });
+            return sum;
+        }
+        console.log("The total of bill was ", calcSum(tips),' , the tips was ',calcTips(tips),' and the total was ',calcSum(tips)+ calcTips(tips))
+    </script>
+</body>
+</html>

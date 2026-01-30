@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var heightMark1 = 1.69;
+        var weightMark1 = 78;
+        var heightJohn1 = 1.95;
+        var weightJohn1 = 92;
+
+        var heightMark2 = 1.88;
+        var weightMark2 = 95;
+        var heightJohn2 = 1.76;
+        var weightJohn2 = 85;
+
+        function calcBMI(height,weight){
+            return weight / (height * height);
+        }
+
+        function isMarkHigherBMI(MarkH, MarkW, JohnH, JohnW){
+            var MarkBMI = calcBMI(MarkH, MarkW);
+            var JohnBMI = calcBMI(JohnH, JohnW);
+            return MarkBMI > JohnBMI;
+        }
+
+        console.log("Data 1: ", "Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m tall. ");
+        console.log("Mark BMI:", calcBMI(heightMark1,weightMark1));
+        console.log("John BMI:", calcBMI(heightJohn1,weightJohn1));
+        console.log("Is Mark's BMI higher than John's?",isMarkHigherBMI(heightMark1,weightMark1,heightJohn1,weightJohn1));
+        console.log("Data 2: ", "Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1.76 m tall. ");
+        console.log("Mark BMI:", calcBMI(heightMark2,weightMark2));
+        console.log("John BMI:", calcBMI(heightJohn2,weightJohn2));
+        console.log("Is Mark's BMI higher than John's?",isMarkHigherBMI(heightMark2,weightMark2,heightJohn2,weightJohn2));
+        
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Challenge 1: BMI Calculator</h1>
+        <p>Bấm f12 để xem kết quả.</p>
+    </div>
+    
+</body>
+</html>
