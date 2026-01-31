@@ -20,7 +20,7 @@ function CounterApp(props) {
             <div>
                 <button id='cong' onClick={() => { setCount(count + 1) }}>Cộng</button>
                 <button id='tru' onClick={() => { checkMinus() }}>Trừ</button>
-                <button id='reset' onClick={() => { setCount(count = 0) }}>Reset</button>
+                <button id='reset' onClick={() => { setCount(0) }}>Reset</button>
             </div>
         </div>
     );
