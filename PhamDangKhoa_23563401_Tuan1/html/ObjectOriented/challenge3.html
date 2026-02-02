@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Car(make, speed){
+            this.make = make;
+            this.speed = speed;
+
+            this.accelerate = function(){
+                this.speed += 10;
+                console.log(`${this.make} is going at ${this.speed} km/h`);
+            };
+
+            this.brake = function(){
+                this.speed -= 5;
+                console.log(`${this.make} is going at ${this.speed} km/h`);
+            };
+            this.speedUS = function(){
+                return this.speed * 1.6;
+            }
+        }
+        
+        function ElectricCar(make, speed, charge){
+            Car.call(this, make, speed);
+            this.charge = charge;
+
+            this.chargeBattery = function(chargeTo){
+                this.charge = chargeTo;
+            };
+
+            this.accelerate = function(){
+                this.speed += 20;
+                this.charge--;
+                console.log(`${this.make} is going at ${this.speed} km/h, with a charge of ${this.charge}%`);
+            };
+        }
+        const tesla = new ElectricCar('Tesla', 120, 23);
+        tesla.accelerate();
+        tesla.brake();
+        tesla.chargeBattery(90);
+        console.log(tesla);
+        tesla.accelerate();
+    </script>
+</body>
+</html>

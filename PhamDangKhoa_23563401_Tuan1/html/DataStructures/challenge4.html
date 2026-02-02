@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex;">
+        <textarea name="textArea" id="textArea" placeholder="Write something there..."></textarea>
+        <button id="deleteU">Delete UnderScore</button>
+    </div>
+    <script>
+        document.getElementById('deleteU').addEventListener('click', function () {
+        const text = document.getElementById('textArea').value;
+
+        const newText = text.replaceAll('_', ' ');
+        const result = newText.replaceAll(' ', '');
+
+        console.log('Original:', text);
+        console.log('After replace:', result);
+    });
+    </script>
+</body>
+</html>

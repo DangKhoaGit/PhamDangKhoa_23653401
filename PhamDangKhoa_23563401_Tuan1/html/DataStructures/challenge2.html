@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       const game = { 
+            team1: 'Bayern Munich', 
+            team2: 'Borrussia Dortmund', 
+            players: [ 
+            [ 
+                'Neuer', 
+                'Pavard', 
+                'Martinez', 
+                'Alaba', 
+                'Davies', 
+                'Kimmich', 
+                'Goretzka', 
+                'Coman', 
+                'Muller', 
+                'Gnarby', 
+                'Lewandowski', 
+            ], 
+            [ 
+                'Burki', 
+                'Schulz', 
+                'Hummels', 
+                'Akanji', 
+                'Hakimi', 
+                'Weigl', 
+                'Witsel', 
+                'Hazard', 
+                'Brandt', 
+                'Sancho', 
+                'Gotze', 
+            ], 
+            ], 
+            score: '4:0', 
+            scored: ['Lewandowski', 'Gnarby', 'Lewandowski',  
+            'Hummels'], 
+            date: 'Nov 9th, 2037', 
+            odds: { 
+            team1: 1.33, 
+            x: 3.25, 
+            team2: 6.5, 
+            }, 
+        };
+
+        const checkGoal = (playerName) => {
+            let goal = 0;
+            for(let i = 0; i < game.scored.length; i++) {
+                if(game.scored[i] === playerName) {
+                    goal++;
+                }
+            }
+            return goal;
+        }
+
+        const printGoals = (arr) => {
+            arr.forEach(element => {
+                goal = checkGoal(element);
+                console.log(`Goal ${goal}: ${element} goals\n`);
+            });
+        };
+        console.log('Team 1 Players:');
+        printGoals(game.players[0]);
+        console.log('Team 2 Players:');
+        printGoals(game.players[1]);
+
+        const averageOdd = (odds) => {
+            let sum = 0;
+            let count = 0;
+            for(const odd of Object.values(odds)) {
+                sum += odd;
+                count++;
+            }
+            return sum / count;
+        }
+        console.log('Average odd:', averageOdd(game.odds));
+
+        for(const [team, odd] of Object.entries(game.odds)) {
+            const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+            console.log(`Odd of ${teamStr}: ${odd}`);
+        }
+
+        var scorers = {
+            Gnarby: 1, 
+            Hummels: 1, 
+            Lewandowski: 2
+        };
+    </script>
+</body>
+</html>
